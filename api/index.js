@@ -1,4 +1,5 @@
 const express = require('express');
+const { userRouter } = require('./src/routes');
 const app = express();
 
 app.use(express.json());
@@ -12,6 +13,7 @@ APIRouter.get('/version', function(req, res){
 
 })// créer une route qui me donne la version  du package.json du back
 
+APIRouter.use('/users', userRouter)
 app.use('/api', APIRouter);
 
 app.listen(8080, function() {
