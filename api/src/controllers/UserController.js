@@ -3,6 +3,7 @@ const { UserModel } = require("../models");
 
 class UserController extends BaseController{
 
+    userModel;
 
     constructor(req, res){
         super(req, res);
@@ -11,8 +12,8 @@ class UserController extends BaseController{
 
     getAll(){
         this.userModel.getAll()
-            .then((result) => this.sendJson(result))
+            .then(([results]) => this.sendJson(results))
     }
 }
 
-module.exports UserController;
+module.exports = UserController;

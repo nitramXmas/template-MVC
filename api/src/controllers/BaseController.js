@@ -7,9 +7,9 @@ class BaseController {
         this.res=res;
     }
 
-    senJson(data) {
+    sendJson(data) {
         this.res.status(200).json(data)
     }
 }
 
-module.exports BaseController;
+module.exports = BaseController;
